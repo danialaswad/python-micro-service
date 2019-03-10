@@ -19,7 +19,7 @@ docker-clean: docker-stop
 
 run: clean setup
 	source venv/bin/activate;\
-	cd src && python3 main.py;\
+	python3 app.py;\
 
 clean:
 	find . -name '*.pyc' -delete; \
