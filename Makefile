@@ -14,6 +14,9 @@ docker-start:
 docker-stop:
 	docker-compose down
 
+docker-clean: docker-stop
+	docker rmi python-micro-service/main
+
 run: clean setup
 	source venv/bin/activate;\
 	cd src && python3 main.py;\

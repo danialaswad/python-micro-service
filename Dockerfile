@@ -1,6 +1,4 @@
-FROM python:3.8-rc
-
-MAINTAINER Danial Aswad 
+FROM python:3.8-rc 
 
 COPY ./requirements.txt /app/requirements.txt
 
