@@ -3,12 +3,20 @@
 #
 
 .DEFAULT_GOAL = run
-
 SHELL:=/bin/bash
+
+docker-build:
+	docker build -t python-micro-service/main:latest .
+
+docker-start:
+	docker-compose up -d
+
+docker-stop:
+	docker-compose down
 
 run: clean setup
 	source venv/bin/activate;\
-	cd app && python3 main.py;\
+	cd src && python3 main.py;\
 
 clean:
 	find . -name '*.pyc' -delete; \
